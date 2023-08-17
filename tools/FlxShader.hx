@@ -13,7 +13,7 @@ using StringTools;
 class FlxShader extends OriginalFlxShader  
 {  
 
-#if (mac||linux||windows)
+#if (mac||linux||windows||android)
 public var glslVer:String = "120";
 #else
 public var glslVer:String = "100"; 
@@ -40,7 +40,7 @@ public var glslVer:String = "100";
 
             @:privateAccess var gl = __context.gl;
 
-			#if (mac||linux||windows)
+			#if (mac||linux||windows||android)
                         var prefix = "#ifdef GL_ES\n" 
                                 + '#version ${glslVer}\n'
 				+ (precisionHint == FULL ? "#ifdef GL_FRAGMENT_PRECISION_HIGH
